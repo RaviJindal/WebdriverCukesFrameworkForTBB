@@ -127,14 +127,20 @@
                     <execution>
                         <phase>test</phase>
                         <goals>
-                            <goal>java</goal>
+                            <goal>exec</goal>
                         </goals>
                     </execution>
                 </executions>
 				<configuration>
                 	<classpathScope>test</classpathScope>
-                  	<mainClass>cucumber.api.cli.Main</mainClass>
+					<executable>java</executable>
+                  	<!--mainClass>cucumber.api.cli.Main</mainClass-->
                     <arguments>
+						<argument>-classpath</argument>
+            			<!-- automatically creates the classpath using all project dependencies,
+                 		also adding the project build directory -->
+            			<classpath/>
+						<argument>cucumber.api.cli.Main</argument>
 						<argument>--format</argument>
 						<argument>pretty</argument>
 						<argument>--format</argument>
@@ -152,6 +158,11 @@
 						<argument>--tags</argument>
 						<argument>@run</argument>
                     </arguments>
+					<successCodes>
+						<successCode>2</successCode>
+						<successCode>1</successCode>
+						<successCode>0</successCode>
+					</successCodes>
                	</configuration>
             </plugin>
             <plugin>
