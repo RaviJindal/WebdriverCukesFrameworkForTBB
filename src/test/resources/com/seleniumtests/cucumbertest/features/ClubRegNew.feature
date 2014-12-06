@@ -5,7 +5,7 @@ Background: SignUp
     And I visit to the Signup Page
     When I click on the club signup
 	
-@run	
+@notImplemented	
 Scenario: DataEntryValid
 	Then i submit form with valid data and get welcome page
 	| firstName  | lastName | email | confirmEmail | password | confirmPassword | screenName | dateOfBirth | phoneTextbox | shippingCountry | shippingStreet1 | shippingStreet2 | shippingCity | shippingState | shippingZip | ccFirstName | ccLastName | ccType | ccNumber | ccExp | ccCvv | billingCB | coachReferral | COACHID | tnC | CASL | captchaText |
